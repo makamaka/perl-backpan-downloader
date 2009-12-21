@@ -6,14 +6,14 @@ use warnings;
 use Test::More tests => 4;
 
 BEGIN {
-    use_ok "BACKPAN::Downloader";
-    plan skip_all => "Cannot load BACKPAN::Downloader" if $@;
+    use_ok "BackPAN::Downloader";
+    plan skip_all => "Cannot load BackPAN::Downloader" if $@;
 }
 
-my $backpan = BACKPAN::Downloader->new;
+my $backpan = BackPAN::Downloader->new;
 
 SKIP: {
-    skip "coludn't create BACKPAN::Downloader.", 3 unless $backpan;
+    skip "coludn't create BackPAN::Downloader.", 3 unless $backpan;
 
     diag('Please wait a minuts');
 

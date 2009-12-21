@@ -1,4 +1,4 @@
-package BACKPAN::Downloader;
+package BackPAN::Downloader;
 
 use Mouse;
 use Parse::BACKPAN::Packages;
@@ -152,14 +152,14 @@ __END__
 
 =head1 NAME
 
-BACKPAN::Downloader - an installer of BACKPAN modules
+BackPAN::Downloader - an installer of BackPAN modules
 
 =head1 SYNOPSYS
 
     use strict;
-    use BACKPAN::Downloader;
+    use BackPAN::Downloader;
     
-    my $backpan  = BACKPAN::Downloader->new( temp_dir => './tmp' );
+    my $backpan  = BackPAN::Downloader->new( temp_dir => './tmp' );
     my $distname = 'NOT::IN::CPAN::MODULE';
     
     $backpan->lookup( $distname ) or die $backpan->error;
@@ -168,13 +168,13 @@ BACKPAN::Downloader - an installer of BACKPAN modules
 
 =head1 DESCRIPTION
 
-This is a BACKPAN module installer.
+This is a BackPAN module installer.
 
 =head1 METHODS
 
 =head2 new
 
-    $backpan = BACKPAN::Downloader->new;
+    $backpan = BackPAN::Downloader->new;
 
 Creates a new object.
 It can take an named option:

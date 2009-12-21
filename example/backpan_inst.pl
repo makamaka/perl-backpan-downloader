@@ -3,11 +3,11 @@
 use strict;
 use warnings;
 use strict;
-use BACKPAN::Downloader;
+use BackPAN::Downloader;
 
 @ARGV or die "Distribution name?";
 
-my $backpan  = BACKPAN::Downloader->new( temp_dir => './tmp' );
+my $backpan  = BackPAN::Downloader->new( temp_dir => './tmp' );
 
 for my $distname ( @ARGV ) {
 

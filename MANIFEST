@@ -1,5 +1,5 @@
 Changes
-lib/BACKPAN/Downloader.pm
+lib/BackPAN/Downloader.pm
 example/backpan_inst.pl
 Makefile.PL
 MANIFEST

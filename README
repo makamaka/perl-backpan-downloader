@@ -1,7 +1,7 @@
-BACKPAN::Downloader version 0.01
+BackPAN::Downloader version 0.01
 ========================
 
-an installer of BACKPAN modules
+an installer of BackPAN modules
 
 INSTALLATION
 
@@ -14,9 +14,9 @@ To install this module type the following:
 
 SYNOPSYS
         use strict;
-        use BACKPAN::Downloader;
+        use BackPAN::Downloader;
 
-        my $backpan  = BACKPAN::Downloader->new( temp_dir => './tmp' );
+        my $backpan  = BackPAN::Downloader->new( temp_dir => './tmp' );
         my $distname = 'NOT::IN::CPAN::MODULE';
 
         $backpan->lookup( $distname ) or die $backpan->error;
@@ -24,11 +24,11 @@ SYNOPSYS
         $backpan->install()  or die "Can't install, " . $backpan->error;
 
 DESCRIPTION
-    This is a BACKPAN module installer.
+    This is a BackPAN module installer.
 
 METHODS
   new
-        $backpan = BACKPAN::Downloader->new;
+        $backpan = BackPAN::Downloader->new;
 
     Creates a new object. It can take an named option:
 

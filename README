@@ -1,0 +1,88 @@
+Text::CSV version 1.16
+========================
+
+comma-separated values manipulator
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DESCRIPTION
+    This is a BACKPAN module installer.
+
+METHODS
+  new
+        $backpan = BACKPAN::Downloader->new;
+
+    Creates a new object. It can take an named option:
+
+    temp_dir
+        A directory for saving downloaded file.
+
+  lookup
+        $backpan->lookup( $distribution );
+
+    Check a distribution. If the distribution is found, returns
+    Parse::BACKPAN::Packages::Distribution. Otherwise "undef".
+
+    The found Parse::BACKPAN::Packages::Distribution and
+    Parse::BACKPAN::Packages::File object are set into "distfile" and
+    "filedata".
+
+  download
+    Downloads the lookuped distribution file.
+
+  install
+        $backpan->install();
+
+    Installs the downloaded distribution file. If set "delete_saved_file"
+    option, it will delete the downloaded file after install.
+
+        $backpan->install( delete_saved_file => 1 );
+
+    This method returns false if an explicit error is raised. But a return
+    of a true vaule does not mean that the installation was sucessful.
+
+  reset
+    Resets a found distribution data.
+
+  temp_dir
+        $backpan->temp_dir( $dir );
+        $dir = $backpan->temp_dir();
+
+    A directory for saving downloaded file.
+
+  dist_is_found
+        $bool = $backpan->dist_is_found;
+
+    Returns the result of "lookup" method.
+
+  ua
+    Returns a LWP::UserAgent object getting "backpan.txt.gz".
+
+  error
+    Returns an error message.
+
+  distfile
+    Returns a found Parse::BACKPAN::Packages::Distribution.
+
+  filedata
+    Returns a found Parse::BACKPAN::Packages::File.
+
+AUTHOR
+    Makamaka Hannyaharamitu, <makamaka[at]cpan.org>
+
+COPYRIGHT AND LICENSE
+    Copyright 2009 by Makamaka Hannyaharamitu, <makamaka[at]cpan.org>
+
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
+SEE ALSO
+    Parse::BACKPAN::Packages, CPAN::Inject, CPAN::Shell, LWP::UserAgent
+

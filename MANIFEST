@@ -1,0 +1,9 @@
+Changes
+lib/BACKPAN/Downloader.pm
+example/backpan_inst.pl
+Makefile.PL
+MANIFEST
+README
+t/00_pod.t
+t/01_compile.t
+t/02_base.t

@@ -1,7 +1,7 @@
-Text::CSV version 1.16
+BACKPAN::Downloader version 0.01
 ========================
 
-comma-separated values manipulator
+an installer of BACKPAN modules
 
 INSTALLATION
 
@@ -11,6 +11,17 @@ To install this module type the following:
    make
    make test
    make install
+
+SYNOPSYS
+        use strict;
+        use BACKPAN::Downloader;
+
+        my $backpan  = BACKPAN::Downloader->new( temp_dir => './tmp' );
+        my $distname = 'NOT::IN::CPAN::MODULE';
+
+        $backpan->lookup( $distname ) or die $backpan->error;
+        $backpan->download() or die sprintf("Can't download. (%s)", $backpan->error);
+        $backpan->install()  or die "Can't install, " . $backpan->error;
 
 DESCRIPTION
     This is a BACKPAN module installer.
